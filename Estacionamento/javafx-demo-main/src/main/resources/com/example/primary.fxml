@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="703.0" prefWidth="780.0" spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <children>
+      <Label prefHeight="48.0" prefWidth="221.0" text="ESTACIONAMENTO" textFill="#5a4cd9">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox maxWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" style="-fx-border-color: BLACK; -fx-padding: 10;">
+         <children>
+            <Label alignment="CENTER" text="cadastrar veículo" textFill="#5a4cd9">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="53.0" prefWidth="478.0">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="239.0" style="-fx-padding: 5;">
+                     <children>
+                        <Label text="proprietáreo">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtProprietario" maxWidth="-Infinity" prefHeight="26.0" prefWidth="191.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="239.0" style="-fx-padding: 5;">
+                     <children>
+                        <Label text="valor">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtValor" maxWidth="-Infinity" prefHeight="26.0" prefWidth="191.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="63.0" prefWidth="478.0">
+               <children>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="239.0" style="-fx-padding: 5;">
+                     <children>
+                        <Label text="marca">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMarca" maxWidth="-Infinity" prefHeight="26.0" prefWidth="191.0" />
+                     </children>
+                  </VBox>
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="63.0" prefWidth="239.0" style="-fx-padding: 5;">
+                     <children>
+                        <Label text="modelo">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtModelo" maxWidth="-Infinity" prefHeight="26.0" prefWidth="191.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutX="21.0" layoutY="103.0" prefHeight="46.0" prefWidth="478.0" style="-fx-padding: 5; -fx-spacing: 50;">
+               <children>
+                  <Label prefHeight="19.0" prefWidth="74.0" text="categoria">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="btnCarro" mnemonicParsing="false" prefHeight="18.0" prefWidth="60.0" text="carro">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="categoria" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="btnMoto" mnemonicParsing="false" text="moto" toggleGroup="$categoria" />
+                  <RadioButton fx:id="btnOutro" mnemonicParsing="false" text="outro" toggleGroup="$categoria" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#adicionar" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #5a4cd9;" text="salvar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="502.0">
+         <children>
+            <Label alignment="CENTER" text="veículos cadastrados" textFill="#5a4cd9">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ListView fx:id="listaCarros" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="200.0" prefWidth="508.0" />
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="234.0" style="-fx-spacing: 40;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#apagar" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #d43f3f;" text="apagar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#editar" prefHeight="27.0" prefWidth="86.0" style="-fx-background-color: #ead72d;" text="editar" textFill="#383838">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
